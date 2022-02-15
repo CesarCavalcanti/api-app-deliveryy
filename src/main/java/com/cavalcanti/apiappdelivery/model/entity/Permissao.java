@@ -11,11 +11,12 @@ import javax.persistence.Id;
 @Entity
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class FormaPagamento {
+public class Permissao {
 
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String nome;
     private String descricao;
 }
