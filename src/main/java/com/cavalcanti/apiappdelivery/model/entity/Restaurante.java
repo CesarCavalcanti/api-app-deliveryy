@@ -3,10 +3,7 @@ package com.cavalcanti.apiappdelivery.model.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
@@ -20,4 +17,10 @@ public class Restaurante {
     private Long id;
     private String nome;
     private BigDecimal taxaFrete;
+    @ManyToOne
+    @JoinColumn(name = "cozinha_id")
+    private Cozinha cozinha;
+    @ManyToOne
+    @JoinColumn(name = "formas_de_pagamentos_id")
+    private FormaPagamento formasDePagamentos;
 }
